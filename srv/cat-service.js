@@ -8,13 +8,13 @@ const db = cds.connect.to('db');
 // });
 export default cds.service.impl(srv => {
     // srv.before('READ', 'Employee', capitalizename);
-    srv.on('CREATE', 'Employee', createEmployee);
+    // srv.on('CREATE', 'Employee', createEmployee);
     srv.before('READ', 'Employee', capitalizename);
 });
 
-async function createEmployee(req) {
-    console.log(req);
-}
+// async function createEmployee(req) {
+//     console.log(req);
+// }
 
 async function capitalizename(req) {
     let db_data = "SELECT * " +
