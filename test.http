@@ -1,0 +1,40 @@
+GET http://localhost:4004/odata/v4/catalog/Employee
+# GET http://localhost:4004/odata/v4/catalog/Employee?$expand=empCompany
+###
+
+POST http://localhost:4004/odata/v4/catalog/Employee
+Content-Type: application/json
+
+{
+     "id": 16,
+      "companyId": null,
+      "eNam": "Ritesh",
+      "job": null,
+      "sal_value": null,
+      "sal_currency": null,
+      "email": [{"kind":"dfg@gmail.com"}],
+      "company": "Maventic",
+      "lName": null,
+      "gen": "hhhhh"
+}
+###
+
+PUT http://localhost:4004/odata/v4/catalog/Employee/8
+Content-Type: application/json
+
+{
+      "id": 8,
+      "companyId": null,
+      "eNam": "Ritesh",
+      "job": null,
+      "sal_value": null,
+      "sal_currency": null,
+      "email": [],
+      "company": "Maventic",
+      "lName": null,
+      "gen": "hhhhh"
+}
+###
+
+DELETE http://localhost:4004/odata/v4/catalog/Employee/15
+###
