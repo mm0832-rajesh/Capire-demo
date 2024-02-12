@@ -1,0 +1,15 @@
+
+get http://localhost:4004/odata/v4/catalog/Departments
+
+###
+
+post http://localhost:4004/odata/v4/catalog/Departments
+Content-Type: application/json
+
+{
+    "Department_Id":"02",
+    "Department_Name":"Analyst",
+    "Head_Of_Department":"PB"
+}
+
+###

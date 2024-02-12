@@ -1,0 +1,14 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+<SelectDialog
+        id="id"
+        title="Departments" 
+        class="sapUiPopupWithPadding"
+        items="{bookshop>/Departments}"
+        search="_onValueHelpSearch"
+        confirm="_onValueHelpConfirmPress" 
+        cancel="_onValueHelpConfirmPress">
+        <StandardListItem
+            title="{bookshop>Department_Id}"
+            description="{bookshop>Department_Name}"/>
+    </SelectDialog>
+</core:FragmentDefinition>

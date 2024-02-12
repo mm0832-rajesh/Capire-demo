@@ -1,0 +1,26 @@
+<mvc:View
+    controllerName="frontend.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+>
+    <Page
+        id="page"
+        title="{i18n>title}"
+    >
+        <List
+            headerText="Company Data"
+            class="sapUiResponsiveMargin"
+            width="auto"
+            items="{CompanyDatas>/CompanyData}"
+        >
+            <items>
+                <ObjectListItem
+                    title="{CompanyDatas>Name}"
+                    type="Navigation"
+                    press="onNavigate"
+                />
+            </items>
+        </List>
+    </Page>
+</mvc:View>

@@ -1,0 +1,36 @@
+<mvc:View controllerName="frontend.controller.EmployeesList"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns:core="sap.ui.core"
+    xmlns="sap.m">
+    <Page id="page" title="Employees" showNavButton="true" navButtonPress="onNavBack">
+
+        <headerContent>
+            <Button icon="sap-icon://add-employee" tooltip="Add Employee" press="onAddEmp" />
+        </headerContent>
+        <List
+            id="EmployeesList"
+            class="sapUiResponsiveMargin"
+            width="auto"
+            growing="true"
+            growingThreshold="5"
+            items="{
+                path: 'EmployeesModel>/'
+            }">
+
+            <headerToolbar>
+                <Toolbar>
+                    <Label id="tableHeader" text="Employees List"/>
+                    <ToolbarSpacer />
+                    <SearchField id="searchField" width="auto" search="onSearchEmployee" />
+                </Toolbar>
+            </headerToolbar>
+            <items>
+                <ObjectListItem
+                    title="{EmployeesModel>Employee_Id}"
+                    type="Navigation"
+                    press="onSelect">
+                    <ObjectAttribute text="{EmployeesModel>Employee_Full_Name}" />
+                </ObjectListItem>
+            </items>
+        </List>
+    </Page>
+</mvc:View>

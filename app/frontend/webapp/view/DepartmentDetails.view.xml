@@ -1,0 +1,39 @@
+<mvc:View
+    controllerName="frontend.controller.DepartmentDetails"
+    xmlns="sap.m"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:f="sap.f"
+    xmlns:card="sap.f.cards"
+>
+    <Page title="Department Details">
+        <content>
+         
+            <VBox class="sapUiSmallMargin">
+                <ObjectHeader
+                    title="DepartMent Name:- {bookshop>Department_Name}"
+                    intro="DepartMent ID:- {bookshop>Department_Id}"
+                />
+                <ObjectAttribute text="Head Of Department:- {bookshop>Head_Of_Department}" />
+            </VBox>
+
+            
+            <List
+                headerText="Employees"
+                items="{bookshop>Employee}"
+            >
+                <StandardListItem
+                    title="ID:- {bookshop>Employee_Id}"
+                    description="Name:- {bookshop>Employee_Full_Name}"
+                />
+            </List>
+        </content>
+
+      
+        <headerContent>
+            <Button
+                icon="sap-icon://nav-back"
+                press="onNavBack"
+            />
+        </headerContent>
+    </Page>
+</mvc:View>

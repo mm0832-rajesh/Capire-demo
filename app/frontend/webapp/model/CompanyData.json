@@ -1,0 +1,10 @@
+{
+    "CompanyData" : [
+        {
+            "Name":"Employees"
+        },
+        {
+            "Name":"Departments"
+        }
+    ]
+}

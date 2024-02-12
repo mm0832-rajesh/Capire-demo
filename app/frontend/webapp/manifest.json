@@ -1,0 +1,185 @@
+{
+  "_version": "1.59.0",
+  "sap.app": {
+    "id": "frontend",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "0.0.1"
+    },
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "resources": "resources.json",
+    "sourceTemplate": {
+      "id": "@sap/generator-fiori:basic",
+      "version": "1.12.3",
+      "toolsId": "734d4290-fe0c-438a-9031-c790850f257a"
+    },
+    "dataSources": {
+      "mainService": {
+        "uri": "/odata/v4/catalog/",
+        "type": "OData",
+        "settings": {
+          "annotations": [],
+          "odataVersion": "4.0"
+        }
+      }
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "flexEnabled": false,
+    "dependencies": {
+      "minUI5Version": "1.120.6",
+      "libs": {
+        "sap.m": {},
+        "sap.ui.core": {},
+        "sap.f": {},
+        "sap.suite.ui.generic.template": {},
+        "sap.ui.comp": {},
+        "sap.ui.generic.app": {},
+        "sap.ui.table": {},
+        "sap.ushell": {}
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "frontend.i18n.i18n"
+        }
+      },
+      "CompanyDatas" :{
+        "uri":"model/CompanyData.json",
+        "type": "sap.ui.model.json.JSONModel"
+      },
+      "bookshop": {
+        "dataSource": "mainService",
+        "preload": true,
+        "settings": {
+          "synchronizationMode": "None",
+          "operationMode": "Server",
+          "autoExpandSelect": true,
+          "earlyRequests": true
+        }
+      }
+    },
+    "resources": {
+      "css": [
+        {
+          "uri": "css/style.css"
+        }
+      ]
+    },
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "viewType": "XML",
+        "async": true,
+        "viewPath": "frontend.view",
+        "controlAggregation": "pages",
+        "controlId": "app",
+        "clearControlAggregation": false
+      },
+      "routes": [
+        {
+          "name": "RouteView1",
+          "pattern": ":?query:",
+          "target": [
+            "TargetView1"
+          ]
+        },
+        {
+          "name": "Employees",
+          "pattern": "Employees",
+          "target": [
+            "TargetEmployeesList"
+          ]
+        },
+        {
+          "name": "Departments",
+          "pattern": "Departments",
+          "target": [
+            "TargetDepartmentsList"
+          ]
+        },
+        {
+          "name": "EmployeeDetails",
+          "pattern": "Employee/{EmployeeId}",
+          "target": [
+            "TargetEmployeeDetails"
+          ]
+        },
+        {
+          "name": "DepartmentDetails",
+          "pattern": "DepartmentDetails/{DepartmentId}",
+          "target": [
+            "TargetDepartmentDetails"
+          ]
+        }
+      ],
+      "targets": {
+        "TargetView1": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "View1",
+          "viewName": "View1"
+        },
+        "TargetEmployeesList": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "EmployeesList",
+          "viewName": "EmployeesList"
+        },
+        "TargetDepartmentsList": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "DepartmentsList",
+          "viewName": "DepartmentsList"
+        },
+        "TargetEmployeeDetails": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "EmployeeDetails",
+          "viewName": "EmployeeDetails"
+        },
+        "TargetDepartmentDetails":{
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "DepartmentDetails",
+          "viewName": "DepartmentDetails"
+        }
+      }
+    },
+    "rootView": {
+      "viewName": "frontend.view.App",
+      "type": "XML",
+      "async": true,
+      "id": "App"
+    }
+  }
+}

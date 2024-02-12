@@ -1,40 +1,71 @@
-GET http://localhost:4004/odata/v4/catalog/Employee
-# GET http://localhost:4004/odata/v4/catalog/Employee?$expand=empCompany
+# GET http://localhost:4004/odata/v4/catalog/Employee
+# # GET http://localhost:4004/odata/v4/catalog/Employee?$expand=empCompany
+# ###
+
+# POST http://localhost:4004/odata/v4/catalog/Employee
+# Content-Type: application/json
+
+# {
+#      "id": 16,
+#       "companyId": null,
+#       "eNam": "Ritesh",
+#       "job": null,
+#       "sal_value": null,
+#       "sal_currency": null,
+#       "email": [{"kind":"dfg@gmail.com"}],
+#       "company": "Maventic",
+#       "lName": null,
+#       "gen": "hhhhh"
+# }
+# ###
+
+# PUT http://localhost:4004/odata/v4/catalog/Employee/8
+# Content-Type: application/json
+
+# {
+#       "id": 8,
+#       "companyId": null,
+#       "eNam": "Ritesh",
+#       "job": null,
+#       "sal_value": null,
+#       "sal_currency": null,
+#       "email": [],
+#       "company": "Maventic",
+#       "lName": null,
+#       "gen": "hhhhh"
+# }
+# ###
+
+# DELETE http://localhost:4004/odata/v4/catalog/Employee/15
+# ###
+
+get http://localhost:4004/odata/v4/catalog/Employees
+
 ###
 
-POST http://localhost:4004/odata/v4/catalog/Employee
+post http://localhost:4004/odata/v4/catalog/Employees
 Content-Type: application/json
 
-{
-     "id": 16,
-      "companyId": null,
-      "eNam": "Ritesh",
-      "job": null,
-      "sal_value": null,
-      "sal_currency": null,
-      "email": [{"kind":"dfg@gmail.com"}],
-      "company": "Maventic",
-      "lName": null,
-      "gen": "hhhhh"
-}
+ {
+      "Employee_Id": "2",
+      "Employee_First_Name": "Ram",
+      "Employee_Last_Name": "Dev",
+      "Employee_Phone_Number": "12345676",
+      "Employee_Department_ID": "02"
+    }
+
 ###
 
-PUT http://localhost:4004/odata/v4/catalog/Employee/8
+patch http://localhost:4004/odata/v4/catalog/Employees/2
 Content-Type: application/json
 
-{
-      "id": 8,
-      "companyId": null,
-      "eNam": "Ritesh",
-      "job": null,
-      "sal_value": null,
-      "sal_currency": null,
-      "email": [],
-      "company": "Maventic",
-      "lName": null,
-      "gen": "hhhhh"
+ {
+      
+     "Employee_First_Name": "Raj",
+            "Employee_Last_Name": "Devar",
+            "Employee_Phone_Number": "1234567891",
+            "Employee_Department_ID": "02"
+      
 }
-###
 
-DELETE http://localhost:4004/odata/v4/catalog/Employee/15
 ###

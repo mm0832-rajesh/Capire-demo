@@ -1,0 +1,52 @@
+<mvc:View
+    controllerName="frontend.controller.DepartmentsList"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+>
+    <Page
+        id="page"
+        title="Departments"
+        showNavButton="true"
+        navButtonPress="onNavBack"
+        class="sapUiContentPadding sapUiResponsivePadding--header sapUiResponsivePadding--subHeader sapUiResponsivePadding--content sapUiResponsivePadding--footer"
+    >
+        <content>
+            <List
+                id="departmentsList"
+                headerText="Departments List"
+                class="sapUiResponsiveMargin"
+                width="auto"
+                growing="true"
+                growingThreshold="5"
+                items="{
+            path:'bookshop>/Departments'
+        }"
+            >
+                <headerToolbar>
+                    <Toolbar>
+                        <Label
+                            id="tableHeader"
+                            text="Departments List"
+                        />
+                        <ToolbarSpacer />
+                        <SearchField
+                            id="searchField"
+                            width="auto"
+                            search="onSearchDepartment"
+                        />
+                    </Toolbar>
+                </headerToolbar>
+                <items>
+                    <ObjectListItem
+                        title="{bookshop>Department_Id}"
+                        type="Navigation"
+                        press="onSelectDepartment"
+                    >
+                        <ObjectAttribute text="{bookshop>Department_Name}" />
+                    </ObjectListItem>
+                </items>
+            </List>
+        </content>
+    </Page>
+</mvc:View>
